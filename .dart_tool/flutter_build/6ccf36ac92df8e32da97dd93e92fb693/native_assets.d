@@ -1,0 +1,1 @@
+ C:\\Users\\Demian\\Desktop\\proyectos\ en\ progreso\\archi_salon\\archi\\.dart_tool\\flutter_build\\6ccf36ac92df8e32da97dd93e92fb693\\native_assets.yaml: 
