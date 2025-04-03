@@ -63,11 +63,12 @@ class RowHorario extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    bool isMinimum = screenWidth < 530;
+    double screenHeight = MediaQuery.of(context).size.height;
+    bool isMinimum = screenWidth < 600;
     bool isLittle = screenWidth < 800;
     bool isMedium = screenWidth < 1200;
     return Container(
-      padding: EdgeInsets.symmetric(vertical: (!isMinimum ? 80 : 30), horizontal: 10),
+      padding: EdgeInsets.symmetric(vertical: ((!isMinimum && !isLittle) && screenHeight > 1200 ? 80 : 30), horizontal: 10),
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
@@ -122,7 +123,6 @@ class RowHorario extends StatelessWidget {
           Column(
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     'CANTO',
@@ -136,7 +136,6 @@ class RowHorario extends StatelessWidget {
                 ],
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     'YOGA',
@@ -150,11 +149,10 @@ class RowHorario extends StatelessWidget {
                 ],
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     'BACHATA',
-                    style: disciplinasTextStyle(fontSize: !isMedium ? 25 : 15),
+                    style: disciplinasTextStyle(fontSize: !isMedium ? 30 : 18),
                   ),
                   const SizedBox(width: 10),
                   Text(
@@ -164,7 +162,6 @@ class RowHorario extends StatelessWidget {
                 ],
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     'TANGO',
@@ -187,19 +184,19 @@ class RowHorario extends StatelessWidget {
                   borderRadius: BorderRadius.circular(16),
                   child: Image.asset(
                     'images/sticker1.png',
-                    width: isLittle ? screenWidth / 5 : 230 / (!isMedium ? 1 : 1.5),
+                    width: isLittle ? screenWidth / 5.5 : 230 / (!isMedium ? 1 : 1.5),
                     height: 230 / (!isMedium ? 1 : 1.5),
                     fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(width: isLittle ? screenWidth / 50 : 20 / (!isMedium ? 1 : 1.5)),
+                SizedBox(width: isLittle ? screenWidth / 80 : 20 / (!isMedium ? 1 : 1.5)),
                 Column(
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(16),
                       child: Image.asset(
                         'images/sticker2.png',
-                        width: 190 / (!isMedium ? 1 : 1.5),
+                        width: isLittle ? screenWidth / 6.5 : 190 / (!isMedium ? 1 : 1.5),
                         height: 130 / (!isMedium ? 1 : 1.5),
                         fit: BoxFit.cover,
                       ),
@@ -209,7 +206,7 @@ class RowHorario extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                       child: Image.asset(
                         'images/sticker3.png',
-                        width: 190 / (!isMedium ? 1 : 1.5),
+                        width: isLittle ? screenWidth / 6.5 : 190 / (!isMedium ? 1 : 1.5),
                         height: 85 / (!isMedium ? 1 : 1.5),
                         fit: BoxFit.cover,
                       ),

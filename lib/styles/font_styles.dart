@@ -9,7 +9,7 @@ const FontWeight regular = FontWeight.w400;
 const FontWeight medium = FontWeight.w500;
 const FontWeight semibold = FontWeight.w600;
 const FontWeight bold = FontWeight.w700;
-const FontWeight fullBlack = FontWeight.w500;
+const FontWeight fullBlack = FontWeight.w900;
 
 TextStyle navbarTextStyle({Color? colorete, double? fontSize}) {
   return GoogleFonts.poppins(fontWeight: medium, fontSize: fontSize ?? 17, color: colorete ?? Colors.black);
@@ -87,8 +87,9 @@ TextStyle labelTextStyle({Color? colorete, double? fontSize}) {
 
 TextStyle disciplinasTextStyle({Color? colorete, double? fontSize}) {
   return GoogleFonts.poppins(
-    fontWeight: fullBlack,
+    fontWeight: bold,
     fontSize: fontSize ?? 35,
+    height: 1.1,
     color: colorete ?? Colors.black,
   );
 }
